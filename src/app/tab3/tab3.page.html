@@ -1,0 +1,90 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Input Mahasiswa
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<body>  
+  <div class="wrapper">
+    <div class="text-center mt-4 name">
+      Input Pendaftaran Mahasiswa Baru
+    </div>
+    <form class="p-3 mt-3">
+        <div class="form-field d-flex align-items-center">
+            <span class="far fa-user">Nama Lengkap</span>
+            <input type="text" placeholder="Nama Lengkap..." [(ngModel)]="nama" name="nama">
+        </div>
+
+        <div class="form-field d-flex align-items-center">
+            <span class="fas fa-key">Jenis Kelamin</span>
+            <select [(ngModel)]="jenis_kelamin" name="jenis_kelamin">
+              <option value="L">Laki-Laki</option>
+              <option value="P">Perempuan</option>
+            </select>
+        </div>
+
+        <div class="form-field d-flex align-items-center">
+          <span class="fas fa-key">No.Handphone</span>
+          <input type="text" placeholder="No.Handphone" [(ngModel)]="no_handphone" name="no_handphone">
+        </div>
+
+        <div class="form-field d-flex align-items-center">
+          <span class="far fa-user">Email</span>
+          <input type="text" placeholder="Example@gmail.com" [(ngModel)]="email" name="email">
+        </div>
+
+        <div class="form-field d-flex align-items-center">
+          <span class="far fa-user">Asal Sekolah</span>
+          <input type="text" placeholder="Asal Sekolah..." [(ngModel)]="asal_sekolah" name="asal_sekolah">
+        </div>
+
+        <div class="form-field d-flex align-items-center">
+          <span class="fas fa-key">Program Studi</span>
+          <select [(ngModel)]="studi" name="studi">
+            <option value="SI">Sistem Informasi (S1)</option>
+            <option value="TI">Teknik Informatika (S1)</option>
+            <option value="TEKIN">Teknologi Informasi (S1)</option>
+          </select>
+      </div>
+
+      <div class="form-field d-flex align-items-center">
+        <span class="fas fa-key">Jenjang</span>
+        <select [(ngModel)]="jenjang" name="jenjang">
+          <option value="S1">Sarjana (S1)</option>
+          <option value="D3">Diploma (D3)</option>
+        </select>
+    </div>
+
+    <div class="form-field d-flex align-items-center">
+      <span class="fas fa-key">Kelas</span>
+      <select [(ngModel)]="kelas" name="kelas">
+        <option value="A">Kelas A</option>
+        <option value="B">Kelas B</option>
+        <option value="C">Kelas C</option>
+      </select>
+    </div>
+
+  <div class="form-field d-flex align-items-center">
+    <span class="fas fa-key">Info Kampus</span>
+    <select [(ngModel)]="info" name="info">
+      <option value="MAHASISWA">Mahasiswa UNBIN</option>
+      <option value="WEBSITE">Website UNBIN</option>
+    </select>
+  </div>
+
+  <!-- <div class="form-field d-flex align-items-center">
+    <span class="fas fa-key">Bayar</span>
+    <select [(ngModel)]="status" name="status">
+      <option value="Sudah Bayar">Sudah Bayar</option>
+      <option value="Belum Bayar">Belum Bayar</option>
+    </select>
+  <</div> -->
+        <button class="btn mt-3" (click)="addData()">Daftar</button>
+    </form>
+  </div>
+</body>
+</ion-content>
+

@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+     Data Mahasiswa Baru
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Data Mahasiswa Baru</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+    <section>
+        <div class="container">
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" (click)="baru()" style="color: blue;">Data Mahasiswa Baru</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active"  (click)="pembayaran()">Data Pembayaran</a>
+            </li>
+          </ul>
+            <div class="table-responsive bg-white">
+              <table class="table mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Jenis Kelamin</th>
+                    <th scope="col">No Handphone</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Asal Sekolah</th>
+                    <th scope="col">Studi</th>
+                    <th scope="col">Kelas</th>
+                    <th scope="col">Info</th>
+                    <th scope="col">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor ="let tbl_mahasiswa_baru_refa of MahasiswaDataBaru">
+                    <th scope="row" style="color: #666666;">{{tbl_mahasiswa_baru_refa.kd}}</th>
+                    <td>{{tbl_mahasiswa_baru_refa.nama}}</td>
+                    <td>{{tbl_mahasiswa_baru_refa.jenis_kelamin}}</td>
+                    <td>{{tbl_mahasiswa_baru_refa.no_handphone}}</td>
+                    <td>{{tbl_mahasiswa_baru_refa.email}}</td>
+                    <td>{{tbl_mahasiswa_baru_refa.asal_sekolah}}</td>
+                    <td>{{tbl_mahasiswa_baru_refa.studi}}</td>
+                    <td>{{tbl_mahasiswa_baru_refa.kelas}}</td>
+                    <td>{{tbl_mahasiswa_baru_refa.info}}</td>
+                    <td>{{tbl_mahasiswa_baru_refa.status}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+      </section>
+  </ion-content>

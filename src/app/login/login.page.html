@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title>
+       LOGIN
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<body>
+  <div class="wrapper">
+    <div class="logo">
+        <img src="assets/icon/unbin.jpg" alt="">
+    </div>
+    <div class="text-center mt-4 name">
+        UNIVERSITAS BINANIAGA
+    </div>
+    <form class="p-3 mt-3">
+        
+        <div class="form-field d-flex align-items-center">
+            <span class="far fa-user"></span>
+            <input type="text"  placeholder="NPM" [(ngModel)]="npm" name="npm">
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <span class="fas fa-key"></span>
+            <input type="password" placeholder="Password" [(ngModel)]="password" name="password">
+        </div>
+        
+        <button class="btn mt-3" (click)="Getdata()">Login</button>
+
+        <div class="text-center fs-6">
+            Or
+        </div>
+        
+        <button class="btn mt-3" (click)="sign()">Sign up</button>
+    </form>
+    <div class="text-center fs-6">
+        <a href="#">Forget password?</a>
+    </div>
+    </div>
+</body>

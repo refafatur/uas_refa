@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+     Data Pembayaran
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Data Pembayaran</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  
+    <section>
+        <div class="container">
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" (click)="baru()">Data Mahasiswa Baru</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" (click)="baru()" style="color: blue;">Data Pembayaran</a>
+            </li>
+          </ul>
+            <div class="table-responsive bg-white">
+              <table class="table mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">REG ID</th>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Status Pembayaran</th>
+                    <th scope="col">Jumlah Fee</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor ="let tbl_fee of MahasiswaDataBaru">
+                    <th scope="row" style="color: #666666;">{{tbl_fee.kd}}</th>
+                    <td>REG{{tbl_fee.kd}}</td>
+                    <td>{{tbl_fee.nama}}</td>
+                    <td>{{tbl_fee.password}}</td>
+                    <td>{{tbl_fee.status}}</td>
+                    <td>{{tbl_fee.jumlah_fee}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+      </section>
+</ion-content>

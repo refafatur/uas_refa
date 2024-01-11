@@ -1,0 +1,66 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button href="/login">
+         <ion-title>Back</ion-title>
+      </ion-back-button>
+   </ion-buttons>
+    <ion-title>
+     SIGN UP
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<body>
+  <div class="wrapper">
+    <div class="logo">
+        <img src="assets/icon/unbin.jpg" alt="">
+    </div>
+    <div class="text-center mt-4 name">
+        UNIVERSITAS BINANIAGA
+    </div>
+    <form class="p-3 mt-3">
+      <div class="form-field d-flex align-items-center">
+          <span class="far fa-user">NPM</span>
+          <input type="text" placeholder="Npm..." [(ngModel)]="npm" name="npm">
+      </div>
+
+      <div class="form-field d-flex align-items-center">
+        <span class="far fa-user">Buat Password</span>
+        <input type="password" placeholder="Password" [(ngModel)]="password" name="password">
+    </div>
+
+      <div class="form-field d-flex align-items-center">
+        <span class="far fa-user">Nama Mahasiswa</span>
+        <input type="text" placeholder="Nama Mahasiswa..." [(ngModel)]="nama_mahasiswa" name="nama_mahasiswa">
+      </div>
+
+      <div class="form-field d-flex align-items-center">
+          <span class="fas fa-key">Jenis Kelamin</span>
+          <select [(ngModel)]="jenis_kelamin" name="jenis_kelamin">
+            <option value="L">Laki-Laki</option>
+            <option value="P">Perempuan</option>
+          </select>
+      </div>
+
+      <div class="form-field d-flex align-items-center">
+        <span class="fas fa-key">Jurusan</span>
+        <select [(ngModel)]="jurusan" name="jurusan">
+          <option value="SI">Sistem Informasi (S1)</option>
+          <option value="TI">Teknik Informatika (S1)</option>
+          <option value="TEKIN">Teknologi Informasi (S1)</option>
+        </select>
+    </div>
+
+    <div class="form-field d-flex align-items-center">
+      <span class="far fa-user">Foto Mahasiswa</span>
+      <input type="file" (change)="imageUpload($event)">
+  </div>
+
+      <button class="btn mt-3" (click)="addData()">Daftar</button>
+  </form>
+
+</div>
+</body>
